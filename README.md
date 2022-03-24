@@ -210,13 +210,13 @@ update the deploy.js file to add the new contract.
 
 ```
 npx hardhat run scripts/deploy.js --network rinkeby
-Deploying contracts with the account: 0xD420f9241C36A10A9b2d57Fd71dc38BE362ab6f7
-Token deployed to: 0x32a33658507018666c6FD9428d0103070a8E4FB9
+Deploying contracts with the account: xx2d57Fd71dc38BE362ab6f7
+Token deployed to: 0xC6f1f574F56F6e484eBA944e39fC00Eecc11fcFf
 ```
 
-Check out the contract at [https://rinkeby.etherscan.io/tx/0x3e6393050ccc3a62a234c09c5ab7310416ccc86fa5ae58812f930f07c6aaee40](https://rinkeby.etherscan.io/tx/0x3e6393050ccc3a62a234c09c5ab7310416ccc86fa5ae58812f930f07c6aaee40)
+Check out the contract at [https://rinkeby.etherscan.io/address/0xC6f1f574F56F6e484eBA944e39fC00Eecc11fcFf](https://rinkeby.etherscan.io/address/0xC6f1f574F56F6e484eBA944e39fC00Eecc11fcFf)
 
-The account is used to deploy the contract get 1M WIT tokens. 
+The account used to deploy the contract get 1M WIT tokens. 
 
 <img width="348" alt="Screen Shot 2022-03-23 at 9 29 46 PM" src="https://user-images.githubusercontent.com/595772/159824071-595b4342-5cbe-44ca-affc-cd6c8bb69ee0.png">
 <img width="346" alt="Screen Shot 2022-03-23 at 9 30 20 PM" src="https://user-images.githubusercontent.com/595772/159824078-1288a3eb-5f4f-459d-a774-9e6eda83c540.png">
@@ -225,6 +225,12 @@ update App.js with two contacts and then run `npm start`, send 1000 WIT tokens t
 
 <img width="354" alt="Screen Shot 2022-03-23 at 9 51 59 PM" src="https://user-images.githubusercontent.com/595772/159826203-931601c5-7498-4ff6-9d0e-00d54abe3cff.png">
 <img width="1047" alt="Screen Shot 2022-03-23 at 9 52 52 PM" src="https://user-images.githubusercontent.com/595772/159826205-fe3d8d0b-a6be-465f-a139-c42ef78480bc.png">
+
+Verify the contract:
+
+Make sure to use the compiler version as specified in `hardhat.config.js`:
+
+<img width="1200" alt="Screen Shot 2022-03-24 at 9 10 31 AM" src="https://user-images.githubusercontent.com/595772/159923293-9d41a55a-66af-44fa-878a-f7e4628ae4a8.png">
 
 
 committed and added a git tag `rinkeby-token`
