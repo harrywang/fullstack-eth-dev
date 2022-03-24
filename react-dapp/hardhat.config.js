@@ -28,7 +28,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   networks: {
     hardhat: {},
     rinkeby: {
-      url: "https://eth-rinkeby.alchemyapi.io/v2/0_9y9twl9AjteiyKkWszAFySVqjZioi7",
+      url: process.env.ALCHEMY_URL,
       accounts: [process.env.PRIVATE_KEY]
     }
   },

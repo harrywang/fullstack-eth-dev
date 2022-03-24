@@ -159,6 +159,7 @@ get the private key for the rinkeby test account and put the key in `.env` file 
 
 ```
 PRIVATE_KEY='xxxx475819ff278c127f877cf9dc998f0609eb9'
+ALCHEMY_URL='https://eth-rinkeby.alchemyapi.io/v2/WDL-ZpOtJ3Yxxx'
 ```
 
 change `hardhat.config.js`: 
