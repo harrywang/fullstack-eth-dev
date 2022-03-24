@@ -138,6 +138,8 @@ committed and added a git tag `local-greeting`
 
 ### Rinkeby Testnet
 
+Get test either from https://rinkebyfaucet.com/
+
 Go to https://www.alchemy.com/ to register an account. Create a new app:
 
 <img width="1224" alt="Screen Shot 2022-03-23 at 8 23 09 PM" src="https://user-images.githubusercontent.com/595772/159817846-50c499e5-0838-4c6f-b255-149aba45c7b3.png">
@@ -198,24 +200,33 @@ added a git tag: `rinkeby-greeting`.
 `git checkout rinkeby-greeting` to get to this point.
 
 
-### Issue Token
+### Issue Token on Rinkeby
 
-after adding the Token contract
+add the Token contract Token.sol, compile it: `npx hardhat compile`
+
+update the deploy.js file to add the new contract.
+
+(I had to only deploy one contract to avoid this error: `Error: replacement fee too low`)
 
 ```
-npx hardhat run scripts/deploy.js --network localhost
-You are using a version of Node.js that is not supported by Hardhat, and it may work incorrectly, or not work at all.
-
-Please, make sure you are using a supported version of Node.js.
-
-To learn more about which versions of Node.js are supported go to https://hardhat.org/nodejs-versions
-Deploying contracts with the account: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
-Greeter deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
-Token deployed to: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+npx hardhat run scripts/deploy.js --network rinkeby
+Deploying contracts with the account: 0xD420f9241C36A10A9b2d57Fd71dc38BE362ab6f7
+Token deployed to: 0x32a33658507018666c6FD9428d0103070a8E4FB9
 ```
 
-The first test account is used to deploy the contract, which will be given 1m HWT token. 
+Check out the contract at [https://rinkeby.etherscan.io/tx/0x3e6393050ccc3a62a234c09c5ab7310416ccc86fa5ae58812f930f07c6aaee40](https://rinkeby.etherscan.io/tx/0x3e6393050ccc3a62a234c09c5ab7310416ccc86fa5ae58812f930f07c6aaee40)
 
-<img width="345" alt="Screen Shot 2022-03-23 at 6 56 56 PM" src="https://user-images.githubusercontent.com/595772/159809978-78be7fe9-7726-49ff-8c35-ba48f51980ad.png">
+The account is used to deploy the contract get 1M WIT tokens. 
+
+<img width="348" alt="Screen Shot 2022-03-23 at 9 29 46 PM" src="https://user-images.githubusercontent.com/595772/159824071-595b4342-5cbe-44ca-affc-cd6c8bb69ee0.png">
+<img width="346" alt="Screen Shot 2022-03-23 at 9 30 20 PM" src="https://user-images.githubusercontent.com/595772/159824078-1288a3eb-5f4f-459d-a774-9e6eda83c540.png">
+
+update App.js with two contacts and then run `npm start`, send 1000 WIT tokens to another account:
+
+<img width="354" alt="Screen Shot 2022-03-23 at 9 51 59 PM" src="https://user-images.githubusercontent.com/595772/159826203-931601c5-7498-4ff6-9d0e-00d54abe3cff.png">
+<img width="1047" alt="Screen Shot 2022-03-23 at 9 52 52 PM" src="https://user-images.githubusercontent.com/595772/159826205-fe3d8d0b-a6be-465f-a139-c42ef78480bc.png">
 
 
+committed and added a git tag `rinkeby-token`
+
+`git checkout rinkeby-token` to come to this snapshot.
