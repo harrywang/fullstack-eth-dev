@@ -236,3 +236,25 @@ Make sure to use the compiler version as specified in `hardhat.config.js`:
 committed and added a git tag `rinkeby-token`
 
 `git checkout rinkeby-token` to come to this snapshot.
+
+### Issue ERC20 Token
+
+```
+npm install @openzeppelin/contracts
+```
+
+a new ERC20 contract, a new deploy script.
+
+```
+npx hardhat compile
+npx hardhat run scripts/deploy-erc20.js --network rinkeby
+
+Token deployed to: 0xbDb07bB0Bbb0dbD35AcDD20Ac379C192ba2CBcbF
+```
+
+Check at [https://rinkeby.etherscan.io/address/0xbDb07bB0Bbb0dbD35AcDD20Ac379C192ba2CBcbF](https://rinkeby.etherscan.io/address/0xbDb07bB0Bbb0dbD35AcDD20Ac379C192ba2CBcbF)
+
+
+committed and added a git tag `rinkeby-erc20`
+
+`git checkout rinkeby-erc20` to come to this snapshot.
