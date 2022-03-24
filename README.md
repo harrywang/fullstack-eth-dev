@@ -27,6 +27,23 @@ new files:
 
 <img width="562" alt="Screen Shot 2022-03-23 at 11 32 27 AM" src="https://user-images.githubusercontent.com/595772/159736470-8a74229c-5774-4677-b1e4-28c34805ab97.png">
 
+change hardhat.config.js and update the module.exports to look like this:
+```
+module.exports = {
+  solidity: "0.8.4",
+  paths: {
+    artifacts: './src/artifacts',
+  },
+  networks: {
+    hardhat: {
+      chainId: 1337
+    }
+  }
+};
+```
+
+
+
 compile the contracts
 
 ```
@@ -40,7 +57,7 @@ start the local node:
 npx hardhat node
 ```
 
-10 test accounts have been created:
+20 test accounts have been created:
 
 ```
 WARNING: These accounts, and their private keys, are publicly known.
@@ -54,12 +71,44 @@ Private Key: 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
 
 ```
 
-deploy the contract to local node - the first account is used to pay the gas fee:
+rename `scripts/deploy.js` and deploy the contract to local node - the first account is used to pay the gas fee:
 
+**NOTE: same contract can be deployed multiple times into different addresses**
 ```
 npx hardhat run scripts/deploy.js --network localhost
 
+Deploying contracts with the account: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
 Greeter deployed to: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+```
+
+and the test node terminal console has the output:
+
+```
+web3_clientVersion
+eth_chainId
+eth_accounts
+eth_blockNumber
+eth_chainId (2)
+eth_estimateGas
+eth_getBlockByNumber
+eth_feeHistory
+eth_sendTransaction
+  Contract deployment: Greeter
+  Contract address:    0x5fbdb2315678afecb367f032d93f642f64180aa3
+  Transaction:         0x7269d154f4fe421d28cd94b0f36485036b4fd82a48d623148c2d61c1484e42b2
+  From:                0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+  Value:               0 ETH
+  Gas used:            497026 of 497026
+  Block #1:            0x5395d9352ce665c73f7466e73487d13a750cdd1fe99b74c2d90e7cba6727ea8e
+
+  console.log:
+    Deploying a Greeter with greeting: Hello, Hardhat!
+
+eth_chainId
+eth_getTransactionByHash
+eth_chainId
+eth_getTransactionReceipt
+
 ```
 
 Change contract address in App.js, then test using 
@@ -67,6 +116,19 @@ Change contract address in App.js, then test using
 ```
 npm start
 ```
+
+click Fetch, you should see the message shown in the Chrome Inspector Console:
+
+<img width="392" alt="Screen Shot 2022-03-23 at 8 11 30 PM" src="https://user-images.githubusercontent.com/595772/159817124-8e7380be-3148-4c12-a558-b8d334284837.png">
+
+import the test account into MetaMask using private key, connect to the React site page and change the greeting by linking to the account and pay the gas fee.
+
+if running into this issue: https://medium.com/@thelasthash/solved-nonce-too-high-error-with-metamask-and-hardhat-adc66f092cd
+
+Open up your MetaMask window and click on the icon in the top right to display accounts. Go to Settings, then Advanced and hit Reset Account.
+
+if successful, you should see the output in the Chrome console:
+<img width="1175" alt="Screen Shot 2022-03-23 at 8 18 24 PM" src="https://user-images.githubusercontent.com/595772/159817397-af42db5d-afe4-4d20-af25-66ad9049dc2b.png">
 
 Testnet
 
