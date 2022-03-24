@@ -3,6 +3,17 @@ My note and code for the tutorial at https://dev.to/dabit3/the-complete-guide-to
 
 ## Setup
 
+The followings are used in this tutorial:
+
+- Solidity
+- Hardhat
+- Alchemy
+- Rinkeby
+- OpenZeppelin
+- React with CRA
+- ethers.js
+
+
 ### Local Node
 
 ```
