@@ -3,6 +3,8 @@ My note and code for the tutorial at https://dev.to/dabit3/the-complete-guide-to
 
 ## Setup
 
+### Local Node
+
 ```
 npx create-react-app react-dapp
 ```
@@ -130,18 +132,69 @@ Open up your MetaMask window and click on the icon in the top right to display a
 if successful, you should see the output in the Chrome console:
 <img width="1175" alt="Screen Shot 2022-03-23 at 8 18 24 PM" src="https://user-images.githubusercontent.com/595772/159817397-af42db5d-afe4-4d20-af25-66ad9049dc2b.png">
 
-Testnet
+committed and added a git tag `local-greeting`
+
+`git checkout local-greeting` to come to this snapshot.
+
+### Rinkeby Testnet
+
+Go to https://www.alchemy.com/ to register an account. Create a new app:
+
+<img width="1224" alt="Screen Shot 2022-03-23 at 8 23 09 PM" src="https://user-images.githubusercontent.com/595772/159817846-50c499e5-0838-4c6f-b255-149aba45c7b3.png">
+<img width="796" alt="Screen Shot 2022-03-23 at 8 23 24 PM" src="https://user-images.githubusercontent.com/595772/159817850-789f08da-2bb2-4198-87fa-ca832c8df8cf.png">
+
+```
+npm install dotenv --save
+```
+
+```
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+```
+
+get the private key for the rinkeby test account and put the key in `.env` file which should be gitignored.
+
+```
+PRIVATE_KEY='xxxx475819ff278c127f877cf9dc998f0609eb9'
+```
+
+change `hardhat.config.js`: 
+
+```
+module.exports = {
+  defaultNetwork: "hardhat",
+  paths: {
+    artifacts: './src/artifacts',
+  },
+  networks: {
+    hardhat: {},
+    rinkeby: {
+      url: "https://eth-rinkeby.alchemyapi.io/v2/0_9y9twl9AjteiyKkWszAFySVqjZioi7",
+      accounts: [process.env.PRIVATE_KEY]
+    }
+  },
+  solidity: "0.8.4",
+};
+```
+Deploy to rinkeby:
 
 ```
 npx hardhat run scripts/deploy.js --network rinkeby
 
-Greeter deployed to: 0xa099F014f8D77061A4d6f354DFf0fC1bc02EC663
+Greeter deployed to: 0xd9945E118a2e2a98d68B0778a652EA839129F6ec
 ```
 
 Gas fee is 0.00124 ether
 
-Check at [https://rinkeby.etherscan.io/tx/0xca503b42da23192f3bf70d454a55510ac5ffa06543fbf74115d40d649304cfe0](https://rinkeby.etherscan.io/tx/0xca503b42da23192f3bf70d454a55510ac5ffa06543fbf74115d40d649304cfe0)
+Check at [https://rinkeby.etherscan.io/tx/0xb702b0cbfd43be4afdbeae29da1165509bbc020632b4930d5e4791a80533930c](https://rinkeby.etherscan.io/tx/0xb702b0cbfd43be4afdbeae29da1165509bbc020632b4930d5e4791a80533930c)
 
+change App.js to the rinkeby address and run `npm start` to test.
+
+Use the Rinkeby account to connect and it should work.
+
+
+### Issue Token
 
 after adding the Token contract
 
