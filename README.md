@@ -193,6 +193,10 @@ change App.js to the rinkeby address and run `npm start` to test.
 
 Use the Rinkeby account to connect and it should work.
 
+added a git tag: `rinkeby-greeting`.
+
+`git checkout rinkeby-greeting` to get to this point.
+
 
 ### Issue Token
 
