@@ -255,6 +255,13 @@ Token deployed to: 0xbDb07bB0Bbb0dbD35AcDD20Ac379C192ba2CBcbF
 
 Check at [https://rinkeby.etherscan.io/address/0xbDb07bB0Bbb0dbD35AcDD20Ac379C192ba2CBcbF](https://rinkeby.etherscan.io/address/0xbDb07bB0Bbb0dbD35AcDD20Ac379C192ba2CBcbF)
 
+Only when you issue ERC20 Tokens, you can see the Token page on Etherscan:
+
+<img width="388" alt="Screen Shot 2022-03-24 at 10 08 25 AM" src="https://user-images.githubusercontent.com/595772/159934697-23f6043b-b729-46f0-9aca-e682c5f3076f.png">
+
+Now when you import the ERC20 tokens, the decimal is 18:
+
+<img width="351" alt="Screen Shot 2022-03-24 at 10 10 49 AM" src="https://user-images.githubusercontent.com/595772/159934998-8f3ace77-7cbd-46f9-9a95-831d111dc0fc.png">
 
 committed and added a git tag `rinkeby-erc20`
 

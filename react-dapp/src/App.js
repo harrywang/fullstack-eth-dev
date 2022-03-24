@@ -5,7 +5,7 @@ import Greeter from './artifacts/contracts/Greeter.sol/Greeter.json'
 import Token from './artifacts/contracts/Token.sol/Token.json'
 
 const greeterAddress = "0xd9945E118a2e2a98d68B0778a652EA839129F6ec"
-const tokenAddress = "0xa87EAc014B3dd062BC550E7cD514F2DdcB609643"
+const tokenAddress = "0xbDb07bB0Bbb0dbD35AcDD20Ac379C192ba2CBcbF"
 
 function App() {
   const [greeting, setGreetingValue] = useState()
